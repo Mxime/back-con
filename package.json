@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build-talk": "node scripts/build-task.js"
+  },
+  "dependencies": {
+    "node": "22.0.0",
+    "showdown": "2.1.0"
+  }
+}
