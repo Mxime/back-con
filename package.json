@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build-talk": "node scripts/build-task.js"
+    "build-talks": "node scripts/build-from-template.js src/templates/talk.html public/talks"
   },
   "dependencies": {
     "node": "22.0.0",
