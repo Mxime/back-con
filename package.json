@@ -2,7 +2,8 @@
   "scripts": {
     "build-talks": "node scripts/build-from-template.js src/templates/talk.html public/talks",
     "build-speakers": "node scripts/build-from-template.js src/templates/speaker.html public/speakers",
-    "build": "npm run build-talks & npm run build-speakers"
+    "build-homepage": "node scripts/build-each-from-template.js talks",
+    "build": "npm run build-homepage & npm run build-talks & npm run build-speakers"
   },
   "dependencies": {
     "node": "22.0.0",

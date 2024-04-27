@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head></head>
+  <body>
+    <article for-each-talks>
+      <h1>{{ name }}</h1>
+      <h2>{{ time }}</h2>
+      <h3>{{ location }}</h3>
+
+      <p>{{ short-description }}</p>
+
+      <a href="../{{ item-path }}">Link to the talk</a>
+    </article>
+  </body>
+</html>
