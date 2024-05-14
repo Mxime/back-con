@@ -26,11 +26,11 @@ function replaceWithPlaceholders(content, placeholders) {
     (acc, placeholder) => {
       return acc.replace(`{{ ${placeholder} }}`, placeholders[placeholder]);
     },
-    content
+    content,
   );
 
   const isContainingPlaceholder = Object.keys(placeholders).some(
-    (placeholder) => updatedContent.includes(`{{ ${placeholder} }}`)
+    (placeholder) => updatedContent.includes(`{{ ${placeholder} }}`),
   );
 
   // Recursively replace if there's other placeholders
