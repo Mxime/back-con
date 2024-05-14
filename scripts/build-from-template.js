@@ -27,7 +27,7 @@ items.forEach((item) => {
   const placeholders = getPlaceholders(itemPath);
   const replacedWithPlaceholders = replaceWithPlaceholders(
     content,
-    placeholders
+    placeholders,
   );
 
   // Rewrite the html

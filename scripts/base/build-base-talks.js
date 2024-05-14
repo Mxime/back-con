@@ -23,7 +23,7 @@ talks.forEach((talk) => {
       `${talkFolderPath}/index.json`,
       JSON.stringify(indexFile),
       null,
-      4
+      4,
     );
   }
 
@@ -31,7 +31,7 @@ talks.forEach((talk) => {
     // write description.markdown file
     fs.writeFileSync(
       `${talkFolderPath}/description.md`,
-      "Description to **update**"
+      "Description to **update**",
     );
   }
 });

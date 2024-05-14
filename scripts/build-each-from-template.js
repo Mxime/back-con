@@ -21,7 +21,7 @@ const forEachEnd = new RegExp(endTag).exec(homepageHtml);
 // copy article content
 const forEachContent = homepageHtml.slice(
   forEachStart.index,
-  forEachEnd.index + endTag.length
+  forEachEnd.index + endTag.length,
 );
 
 // replace placeholders
