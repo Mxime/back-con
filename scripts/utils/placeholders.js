@@ -4,7 +4,7 @@ const showdown = require("showdown");
 
 function getPlaceholders(itemPath) {
   // TODO: Remove relative path
-  const configuration = require(`../${itemPath}/index.json`);
+  const configuration = require(`../../${itemPath}/index.json`);
   const converter = new showdown.Converter();
 
   const placeholders = fs
@@ -26,11 +26,11 @@ function replaceWithPlaceholders(content, placeholders) {
     (acc, placeholder) => {
       return acc.replace(`{{ ${placeholder} }}`, placeholders[placeholder]);
     },
-    content,
+    content
   );
 
   const isContainingPlaceholder = Object.keys(placeholders).some(
-    (placeholder) => updatedContent.includes(`{{ ${placeholder} }}`),
+    (placeholder) => updatedContent.includes(`{{ ${placeholder} }}`)
   );
 
   // Recursively replace if there's other placeholders

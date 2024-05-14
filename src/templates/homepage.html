@@ -10,16 +10,27 @@
     <h2>Talks</h2>
 
     <article for-each-talks>
-      <h3>{{ title }}</h3>
+      <h3>{{ talks.title }}</h3>
 
-      <div>
-        <span>{{ time }}</span>
-        <span>{{ location }}</span>
+      <div for-each-talks.speakers>
+        <a href="../{{ speakers.item-path }}">
+          <img
+            height="32"
+            width="32"
+            alt="{{ speakers.displayName }}"
+            src="../{{ speakers.item-path }}/avatar.jpg"
+          />
+        </a>
       </div>
 
-      <p>{{ description }}</p>
+      <div>
+        <span>{{ talks.time }}</span>
+        <span>{{ talks.location }}</span>
+      </div>
 
-      <a href="../{{ item-path }}">Link to the talk</a>
+      <p>{{ talks.description }}</p>
+
+      <a href="../{{ talks.item-path }}">Link to the talk</a>
     </article>
   </body>
 </html>

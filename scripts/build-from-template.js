@@ -1,5 +1,8 @@
 const fs = require("node:fs");
-const { getPlaceholders, replaceWithPlaceholders } = require("./utils.js");
+const {
+  getPlaceholders,
+  replaceWithPlaceholders,
+} = require("./utils/placeholders.js");
 
 const templatePath = process.argv[2];
 const directoryPath = process.argv[3];
@@ -27,7 +30,7 @@ items.forEach((item) => {
   const placeholders = getPlaceholders(itemPath);
   const replacedWithPlaceholders = replaceWithPlaceholders(
     content,
-    placeholders,
+    placeholders
   );
 
   // Rewrite the html
