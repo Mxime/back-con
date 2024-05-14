@@ -6,6 +6,7 @@ const newFilePath = "public/index.html";
 fs.cpSync(templatePath, newFilePath);
 
 const itemType = process.argv[2];
+const onlyFeatured = process.argv[3] === "only-featured";
 
 const homepageHtml = fs.readFileSync(newFilePath, "utf8");
 const directive = `for-each-${itemType}`;
@@ -21,7 +22,7 @@ const forEachEnd = new RegExp(endTag).exec(homepageHtml);
 // copy article content
 const forEachContent = homepageHtml.slice(
   forEachStart.index,
-  forEachEnd.index + endTag.length,
+  forEachEnd.index + endTag.length
 );
 
 // replace placeholders
@@ -37,6 +38,8 @@ const items = fs
 
 const everyTalks = items.reduce((acc, item) => {
   const placeholders = getPlaceholders(`public/${itemType}/${item}`);
+  if (onlyFeatured && !placeholders.featured) return acc;
+
   const replacedTalk = replaceWithPlaceholders(forEachContent, placeholders);
   return acc + "\n" + replacedTalk.replace(directive, `id="${item}"`);
 }, "");

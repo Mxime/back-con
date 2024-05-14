@@ -1,7 +1,8 @@
 {
-  "title": "TO UPDATE: code-review",
+  "title": "Code review: What a beautiful Lorem Ipsum",
   "category": "LIGHTNING",
-  "location": "",
+  "location": "Pins Secs",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["maxime-martin"]
+  "speakers": ["maxime-martin"],
+  "featured": true
 }

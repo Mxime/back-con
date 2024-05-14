@@ -3,5 +3,6 @@
   "category": "CONFERENCE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["florent-jaby", "florian-valeye"]
+  "speakers": ["florent-jaby", "florian-valeye"],
+  "featured": false
 }

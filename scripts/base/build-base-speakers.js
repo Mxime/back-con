@@ -27,7 +27,7 @@ speakers.forEach((speaker) => {
     // write index.json file
     fs.writeFileSync(
       `${speakerFolderPath}/index.json`,
-      JSON.stringify(indexFile)
+      JSON.stringify(indexFile),
     );
   }
 
@@ -35,7 +35,7 @@ speakers.forEach((speaker) => {
     // write description.markdown file
     fs.writeFileSync(
       `${speakerFolderPath}/description.md`,
-      `Description ${speaker} to **update**`
+      `Description ${speaker} to **update**`,
     );
   }
 

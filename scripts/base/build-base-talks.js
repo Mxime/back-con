@@ -16,15 +16,11 @@ talks.forEach((talk) => {
       location: talk.location || "",
       time: talk.time || "2024-06-18T11:00:00Z",
       speakers: talk.speakers,
+      featured: false,
     };
 
     // write index.json file
-    fs.writeFileSync(
-      `${talkFolderPath}/index.json`,
-      JSON.stringify(indexFile),
-      null,
-      4,
-    );
+    fs.writeFileSync(`${talkFolderPath}/index.json`, JSON.stringify(indexFile));
   }
 
   if (!fs.existsSync(`${talkFolderPath}/description.md`)) {

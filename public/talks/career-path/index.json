@@ -3,5 +3,6 @@
   "category": "ROUND_TABLE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["giovanni-morelli"]
+  "speakers": ["giovanni-morelli"],
+  "featured": false
 }

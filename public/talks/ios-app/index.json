@@ -3,5 +3,6 @@
   "category": "WORKSHOP",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["emmanuel-darnis"]
+  "speakers": ["emmanuel-darnis"],
+  "featured": false
 }
