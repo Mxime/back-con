@@ -1,8 +1,8 @@
 {
-  "title": "TO UPDATE: bob-browsing-journey",
+  "title": "Bob browsing journey to the infracloud",
   "category": "CONFERENCE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
   "speakers": ["anthony-hausman", "antonin-mellier"],
-  "featured": false
+  "featured": true
 }

@@ -1,8 +1,8 @@
 {
-  "title": "TO UPDATE: cloudflare-caching-system",
+  "title": "Cloudflare caching system BTS",
   "category": "LIGHTNING",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
   "speakers": ["maxime-gerges"],
-  "featured": false
+  "featured": true
 }

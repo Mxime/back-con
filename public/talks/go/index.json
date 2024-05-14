@@ -1,8 +1,8 @@
 {
-  "title": "TO UPDATE: go",
+  "title": "An Introduction to the Go Programming Environment",
   "category": "CONFERENCE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
   "speakers": ["arnaud-lasnier"],
-  "featured": false
+  "featured": true
 }
