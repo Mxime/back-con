@@ -22,9 +22,22 @@ function getPlaceholders(itemPath) {
 }
 
 function replaceWithPlaceholders(content, placeholders) {
-  return Object.keys(placeholders).reduce((acc, placeholder) => {
-    return acc.replace(`{{ ${placeholder} }}`, placeholders[placeholder]);
-  }, content);
+  const updatedContent = Object.keys(placeholders).reduce(
+    (acc, placeholder) => {
+      return acc.replace(`{{ ${placeholder} }}`, placeholders[placeholder]);
+    },
+    content
+  );
+
+  const isContainingPlaceholder = Object.keys(placeholders).some(
+    (placeholder) => updatedContent.includes(`{{ ${placeholder} }}`)
+  );
+
+  // Recursively replace if there's other placeholders
+  if (isContainingPlaceholder)
+    return replaceWithPlaceholders(updatedContent, placeholders);
+
+  return updatedContent;
 }
 
 module.exports = { getPlaceholders, replaceWithPlaceholders };
