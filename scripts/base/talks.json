@@ -1,0 +1,91 @@
+[
+  {
+    "title": "keynote",
+    "speakers": ["nicolas-martignole", "theotime-leveque"],
+    "category": "CONFERENCE"
+  },
+  { "title": "eco-conception", "speakers": [], "category": "CONFERENCE" },
+  { "title": "go", "speakers": ["arnaud-lasnier"], "category": "CONFERENCE" },
+  {
+    "title": "fsa",
+    "speakers": ["florent-jaby", "florian-valeye"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "airflow",
+    "speakers": ["mariam-thiam", "nicolas-bonnotte", "yannick-schini"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "bob-browsing-journey",
+    "speakers": ["anthony-hausman", "antonin-mellier"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "creative-pages",
+    "speakers": ["guillaume-amat", "antonin-riviere"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "ways-of-working",
+    "speakers": ["michel-chanthavong", "elodie-mermet"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "gen-ai",
+    "speakers": ["pierre-pessarossi"],
+    "category": "CONFERENCE"
+  },
+  {
+    "title": "kubernetes-topology",
+    "speakers": ["quentin-dufrois", "gregoire-deveaux"],
+    "category": "LIGHTNING"
+  },
+  {
+    "title": "accessibility",
+    "speakers": ["delphine-millet"],
+    "category": "LIGHTNING"
+  },
+  {
+    "title": "cloudflare-caching-system",
+    "speakers": ["maxime-gerges"],
+    "category": "LIGHTNING"
+  },
+  {
+    "title": "qa-in-prod",
+    "speakers": ["facundo-rosonovich"],
+    "category": "LIGHTNING"
+  },
+  {
+    "title": "hexagonal-architecture",
+    "speakers": ["julian-lecalvez", "baptiste-saves"],
+    "category": "LIGHTNING"
+  },
+  {
+    "title": "python-packages",
+    "speakers": ["mathieu-kniewallner"],
+    "category": "LIGHTNING"
+  },
+  { "title": "security", "speakers": ["david-munro"], "category": "LIGHTNING" },
+  {
+    "title": "code-review",
+    "speakers": ["maxime-martin"],
+    "category": "LIGHTNING"
+  },
+  { "title": "cpu", "speakers": ["chris-dupin"], "category": "LIGHTNING" },
+  {
+    "title": "chapter-life",
+    "speakers": ["dimitri-baeli", "frederic-barguil"],
+    "category": "ROUND_TABLE"
+  },
+  {
+    "title": "career-path",
+    "speakers": ["giovanni-morelli"],
+    "category": "ROUND_TABLE"
+  },
+  {
+    "title": "ios-app",
+    "speakers": ["emmanuel-darnis"],
+    "category": "WORKSHOP"
+  }
+]
