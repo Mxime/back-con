@@ -1,1 +1,1 @@
-Description to **update**
+Have you ever been curious about the inner workings of ChatGPT? In this talk, we'll delve into the foundational elements of text generation models, shedding light on how they process and utilize text to formulate useful responses. Whether you're deeply passionate about AI or simply eager to learn more about the internal mechanisms of these models, this session is for you. Together, we'll highlight the uniqueness of these models while significantly demystifying their magic by taking a closer look behind the scenes.

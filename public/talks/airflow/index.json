@@ -1,8 +1,8 @@
 {
-  "title": "TO UPDATE: airflow",
+  "title": "Airflow & Data Circularity",
   "category": "CONFERENCE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
   "speakers": ["mariam-thiam", "nicolas-bonnotte", "yannick-schini"],
-  "featured": false
+  "featured": true
 }

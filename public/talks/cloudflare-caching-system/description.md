@@ -1,1 +1,1 @@
-Description to **update**
+When it comes to website caching and Content Delivery Network, everybody tends to say : caching is fast, caching is good, caching is the Holy Grail for a good website experience. But do you actually know how our Cloudflare partner’s global network does caching ? Which black magic is at stake to avoid talking to our slow Origin ? Join us in this journey to understand how Cloudflare smartly takes advantage of its global network and how it helps Backmarket customers get the fastest and smoothest browsing experience.

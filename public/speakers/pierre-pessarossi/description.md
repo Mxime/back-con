@@ -1,1 +1,1 @@
-Description pierre-pessarossi to **update**
+I am data scientist in the Backbox team but working on various domains at BM (backbox, finance, customer care) and notably developing features based on genAI.
