@@ -8,5 +8,13 @@
 
     <p>{{ short-description }}</p>
     <p>{{ long-description }}</p>
+
+    <form
+      action="https://sheets.googleapis.com/v4/spreadsheets/1oEz5KeBURasi0_CZP9u6X7HnbZ5ybN8XHlV-PLv-QgE/values/1:append"
+      method="post"
+    >
+      <textarea name="feedback" rows="5">Your feedback here...</textarea>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
