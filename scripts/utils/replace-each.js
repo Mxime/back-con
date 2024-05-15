@@ -9,7 +9,10 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
   // find for-each end
   const tagName = forEachStart[1];
   const endTag = `</${tagName}>`;
-  const forEachEnd = new RegExp(endTag).exec(content);
+  const regex = new RegExp(endTag, "g");
+  const forEachEnd = content
+    .matchAll(regex)
+    .find((match) => match.index > forEachStart.index);
 
   // copy article content
   const forEachContent = content.slice(
@@ -43,8 +46,6 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
           placeholders[subItemType]
         )
       : forEachContent;
-
-    console.log(placeholders);
 
     const prefixedPlaceholders = Object.keys(placeholders).reduce(
       (acc, key) => ({ ...acc, [`${itemType}.${key}`]: placeholders[key] }),

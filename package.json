@@ -1,8 +1,9 @@
 {
+  "name": "backcon",
   "scripts": {
     "build-talks": "node scripts/build-from-template.js src/templates/talk.html public/talks",
     "build-speakers": "node scripts/build-from-template.js src/templates/speaker.html public/speakers",
-    "build-homepage": "node scripts/build-homepage.js talks only-featured",
+    "build-homepage": "node scripts/build-homepage.js only-featured",
     "build": "npm run build-homepage & npm run build-talks & npm run build-speakers"
   },
   "dependencies": {

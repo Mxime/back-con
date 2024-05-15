@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
     <title>Back Market – Backcon</title>
@@ -11,28 +11,43 @@
 
     <h2>Talks</h2>
 
-    <article for-each-talks>
-      <h3>{{ talks.title }}</h3>
+    <section>
+      <article for-each-talks>
+        <h3>{{ talks.title }}</h3>
 
-      <div for-each-talks.speakers>
-        <a href="../{{ speakers.item-path }}">
-          <img
-            height="32"
-            width="32"
-            alt="{{ speakers.displayName }}"
-            src="../{{ speakers.item-path }}/avatar.jpg"
-          />
-        </a>
-      </div>
+        <div for-each-talks.speakers>
+          <a href="../{{ speakers.item-path }}">
+            <img
+              height="32"
+              width="32"
+              alt="{{ speakers.displayName }}"
+              src="../{{ speakers.item-path }}/avatar.jpg"
+            />
+          </a>
+        </div>
 
-      <div>
-        <span>{{ talks.time }}</span>
-        <span>{{ talks.location }}</span>
-      </div>
+        <div>
+          <span>{{ talks.time }}</span>
+          <span>{{ talks.location }}</span>
+        </div>
 
-      <p>{{ talks.description }}</p>
+        <p>{{ talks.description }}</p>
 
-      <a href="../{{ talks.item-path }}">Link to the talk</a>
-    </article>
+        <a href="../{{ talks.item-path }}">Link to the talk</a>
+      </article>
+    </section>
+
+    <h2>Speakers</h2>
+
+    <section>
+      <span for-each-speakers>
+        <img
+          height="32"
+          width="32"
+          alt="{{ speakers.displayName }}"
+          src="../{{ speakers.item-path }}/avatar.jpg"
+        />
+      </span>
+    </section>
   </body>
 </html>
