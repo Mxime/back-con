@@ -1,9 +1,10 @@
 {
-  "displayName": "To Replace: delphine-millet displayName",
-  "email": "To Replace: delphine-millet email",
-  "description": "To Replace: delphine-millet description",
-  "division": "To Replace: delphine-millet division",
-  "department": "To Replace: delphine-millet department",
-  "location": "To Replace: delphine-millet location",
-  "country": "To Replace: delphine-millet country"
+  "displayName": "Delphine MILLET",
+  "email": "delphine.millet@backmarket.com",
+  "name": "delphine.millet",
+  "description": "Senior Frontend Engineer II",
+  "division": "BOT",
+  "department": "Customer Journey - Onboard - Content",
+  "location": "Paris",
+  "country": "France"
 }
