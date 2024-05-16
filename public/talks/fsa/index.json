@@ -1,8 +1,8 @@
 {
-  "title": "TO UPDATE: fsa",
+  "title": "Future State of Architecture",
   "category": "CONFERENCE",
   "location": "",
   "time": "2024-06-18T11:00:00Z",
   "speakers": ["florent-jaby", "florian-valeye"],
-  "featured": false
+  "featured": true
 }
