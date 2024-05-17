@@ -1,1 +1,7 @@
-Have you ever been curious about the inner workings of ChatGPT? In this talk, we'll delve into the foundational elements of text generation models, shedding light on how they process and utilize text to formulate useful responses. Whether you're deeply passionate about AI or simply eager to learn more about the internal mechanisms of these models, this session is for you. Together, we'll highlight the uniqueness of these models while significantly demystifying their magic by taking a closer look behind the scenes.
+Function calling is the ability to reliably connect LLMs to external tools to enable effective tool usage and interaction with any API.
+
+For example function calling enables you to create:
+- applications that will convert natural language to valid API calls or database queries
+- solutions to extract and tag complex data pattern from text (e.g. retrieving names or personal information from text)
+
+In this talk, we are going to see what is function calling, how to implement it and illustrate its usage with concrete examples.
