@@ -1,17 +1,40 @@
 <!doctype html>
 <html lang="en-US">
   <head>
-    <title>TO UPDATE: python-packages</title>
+    <title>Demystifying Python packaging</title>
   </head>
   <body>
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
 
-    <h1>TO UPDATE: python-packages</h1>
+    <h1>Demystifying Python packaging</h1>
     <h2>2024-06-18T11:00:00Z</h2>
     <h3></h3>
 
-    <p><p>Description to <strong>update</strong></p></p>
+    <p><p>Python packaging is quite complex, and it's easy to be lost with all the options and concepts as an Engineer. Yet,
+understanding the basic concepts of packaging can be helpful, even as a consumer of external libraries, as it can for
+instance reduce dependency installation time, or reduce production Docker images size, if done correctly.</p>
+<p>This talk's purpose is to give you a better understanding of some Python packaging concepts as a service maintainer,
+by answering questions like:</p>
+<ul>
+<li>what is a build backend?</li>
+<li>what is a wheel, and what problems does it resolve?</li>
+<li>why do some packages need to provide one wheel per OS architecture and/or Python version?</li>
+<li>what is a dependency marker?</li>
+</ul></p>
+
+    <section>
+      <span for-each-speakers>
+        <img
+          height="32"
+          width="32"
+          alt="{{ speakers.displayName }}"
+          src="../{{ speakers.item-path }}/avatar.jpg"
+        />
+        <p>{{speackers.displayName}}</p>
+      </span>
+    </section>
+
   </body>
 </html>
