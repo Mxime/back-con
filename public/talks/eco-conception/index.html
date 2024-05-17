@@ -13,5 +13,18 @@
     <h3></h3>
 
     <p><p>Description to <strong>update</strong></p></p>
+
+    <section>
+      <span for-each-speakers>
+        <img
+          height="32"
+          width="32"
+          alt="{{ speakers.displayName }}"
+          src="../{{ speakers.item-path }}/avatar.jpg"
+        />
+        <p>{{speackers.displayName}}</p>
+      </span>
+    </section>
+
   </body>
 </html>
