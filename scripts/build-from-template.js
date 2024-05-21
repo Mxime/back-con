@@ -4,7 +4,7 @@ const {
   replaceWithPlaceholders,
 } = require("./utils/placeholders.js");
 
-const { buildItems } = require("./utils/replace-items.js");
+const { buildEach } = require("./utils/replace-items.js");
 
 const templatePath = process.argv[2];
 const directoryPath = process.argv[3];
@@ -37,9 +37,11 @@ items.forEach((item) => {
 
   if (replacedWithPlaceholders.includes("for-each-speakers")) {
     // build each speakers
-    const contentWithSpeakers = buildItems(
+    const contentWithSpeakers = buildEach(
       replacedWithPlaceholders,
-      "speakers"
+      `for-each-speakers`,
+      "speakers",
+      placeholders["speakers"]
     );
 
     // Rewrite the html

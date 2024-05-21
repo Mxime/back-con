@@ -83,4 +83,4 @@ function buildItems(content, itemType, featured) {
   );
 }
 
-module.exports = { buildItems };
+module.exports = { buildItems, buildEach };
