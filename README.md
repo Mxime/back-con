@@ -1,6 +1,9 @@
-# Backcon website
-
 # 🥓 https://backmarket.github.io/backcon/
+
+This is the website for the backcon event. It is a 1-day internal conference open for all the BOT members.
+This will happen in Bordeaux on Tuesday, June, 18th.
+
+📅 Save the date!
 
 ## How to update the content?
 
