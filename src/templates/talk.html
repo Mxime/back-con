@@ -16,14 +16,17 @@
 
     <section>
       <span for-each-speakers>
-        <img
-          height="32"
-          width="32"
-          alt="{{ speakers.displayName }}"
-          src="../../../{{ speakers.item-path }}/avatar.jpg"
-        />
+        <a href="../../../{{ speakers.item-path }}">
+          <img
+            height="32"
+            width="32"
+            alt="{{ speakers.displayName }}"
+            src="../../../{{ speakers.item-path }}/avatar.jpg"
+          />
 
-        <p>{{ speakers.displayName }}</p>
+          <h4>{{ speakers.displayName }}</h4>
+        </a>
+
         <div>{{ speakers.description }}</div>
       </span>
     </section>
