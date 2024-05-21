@@ -4,6 +4,8 @@ const {
   replaceWithPlaceholders,
 } = require("./utils/placeholders.js");
 
+const { buildItems } = require("./utils/replace-items.js");
+
 const templatePath = process.argv[2];
 const directoryPath = process.argv[3];
 
@@ -33,6 +35,17 @@ items.forEach((item) => {
     placeholders
   );
 
-  // Rewrite the html
-  fs.writeFileSync(newFilePath, replacedWithPlaceholders);
+  if (replacedWithPlaceholders.includes("for-each-speakers")) {
+    // build each speakers
+    const contentWithSpeakers = buildItems(
+      replacedWithPlaceholders,
+      "speakers"
+    );
+
+    // Rewrite the html
+    fs.writeFileSync(newFilePath, contentWithSpeakers);
+  } else {
+    // Rewrite the html
+    fs.writeFileSync(newFilePath, replacedWithPlaceholders);
+  }
 });
