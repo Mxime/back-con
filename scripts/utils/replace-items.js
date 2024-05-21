@@ -63,4 +63,24 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
   return content.replace(forEachContent, everyItems);
 }
 
-module.exports = { buildEach };
+function buildItems(content, itemType, featured) {
+  if (!content.includes(`for-each-${itemType}`)) return;
+
+  const itemNames = fs
+    .readdirSync(`public/${itemType}/`, {
+      recursive: false,
+      withFileTypes: true,
+    })
+    .filter((dirent) => dirent.isDirectory())
+    .map(({ name }) => name);
+
+  return buildEach(
+    content,
+    `for-each-${itemType}`,
+    itemType,
+    itemNames,
+    featured
+  );
+}
+
+module.exports = { buildItems };

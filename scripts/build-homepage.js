@@ -7,30 +7,12 @@ fs.cpSync(templatePath, newFilePath);
 
 const onlyFeatured = process.argv[2] === "only-featured";
 
-const { buildEach } = require("./utils/replace-each.js");
+const { buildItems } = require("./utils/replace-items.js");
 
 const homepage = fs.readFileSync(newFilePath, "utf8");
 
-function build(content, itemType, featured) {
-  const itemNames = fs
-    .readdirSync(`public/${itemType}/`, {
-      recursive: false,
-      withFileTypes: true,
-    })
-    .filter((dirent) => dirent.isDirectory())
-    .map(({ name }) => name);
-
-  return buildEach(
-    content,
-    `for-each-${itemType}`,
-    itemType,
-    itemNames,
-    featured
-  );
-}
-
-const homePageWithTalks = build(homepage, "talks", onlyFeatured);
-const builtContent = build(homePageWithTalks, "speakers");
+const homePageWithTalks = buildItems(homepage, "talks", onlyFeatured);
+const builtContent = buildItems(homePageWithTalks, "speakers");
 
 console.info(`᧐ Building "${newFilePath}"`);
 
