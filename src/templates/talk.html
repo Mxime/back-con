@@ -38,6 +38,8 @@
     </header>
 
     <main>
+      <h3>About</h3>
+
       {{ description }}
 
       <hr />
@@ -45,20 +47,22 @@
       <h3>Speakers</h3>
 
       <section>
-        <div for-each-speakers>
-          <a href="../../../{{ speakers.item-path }}">
-            <aside>
-              <img
-                height="64"
-                width="64"
-                alt="{{ speakers.displayName }}"
-                src="../../../{{ speakers.item-path }}/avatar.jpg"
-              />
+        <article for-each-speakers>
+          <img
+            height="64"
+            width="64"
+            alt="{{ speakers.displayName }}"
+            src="../../../{{ speakers.item-path }}/avatar.jpg"
+          />
 
-              <h3>{{ speakers.displayName }}</h3>
-            </aside>
-          </a>
-        </div>
+          <h3>
+            <a href="../../../{{ speakers.item-path }}">
+              {{ speakers.displayName }}
+            </a>
+          </h3>
+
+          {{ speakers.description }}
+        </article>
       </section>
 
       <hr />
