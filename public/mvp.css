@@ -625,7 +625,7 @@ table tr:nth-child(even) {
 }
 
 /* Quotes */
-blockquote {
+/* blockquote {
   display: block;
   font-size: x-large;
   line-height: var(--line-height);
@@ -641,7 +641,7 @@ blockquote footer {
   font-size: small;
   line-height: var(--line-height);
   padding: 1.5rem 0;
-}
+} */
 
 /* Scrollbars */
 * {

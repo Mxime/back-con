@@ -8,7 +8,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body>
+  <body id="homepage">
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
@@ -45,24 +45,23 @@
             <sup>{{ talks.category }}</sup>
           </h3>
 
-          <div for-each-talks.speakers>
-            <a href="../{{ speakers.item-path }}">
-              <img
-                height="32"
-                width="32"
-                alt="{{ speakers.displayName }}"
-                src="../{{ speakers.item-path }}/avatar.jpg"
-              />
-            </a>
-          </div>
-
           <div>
-            <span>{{ talks.time }}</span>
-
+            <em>{{ talks.time }}</em>
             <span>{{ talks.location }}</span>
           </div>
 
-          <p>{{ talks.description }}</p>
+          <div>
+            <span for-each-talks.speakers>
+              <a class="talk-speaker" href="../{{ speakers.item-path }}">
+                <img
+                  alt="{{ speakers.displayName }}"
+                  src="../{{ speakers.item-path }}/avatar.jpg"
+                />
+              </a>
+            </span>
+          </div>
+
+          <div>{{ talks.description }}</div>
 
           <a href="../{{ talks.item-path }}">Link to the talk</a>
         </article>

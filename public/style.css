@@ -44,6 +44,15 @@ aside {
   text-align: center;
 }
 
+/* Hoempage */
+#homepage .talk-speaker {
+  width: 48px;
+}
+
+#homepage .talk-speaker img {
+  border-radius: 50%;
+}
+
 /* Speakers page  */
 #speaker header {
   text-align: center;
