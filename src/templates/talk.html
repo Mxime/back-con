@@ -8,7 +8,7 @@
 
     <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
   </head>
-  <body>
+  <body id="talk">
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
@@ -33,23 +33,27 @@
     </header>
 
     <main>
-      <p>{{ description }}</p>
+      {{ description }}
+
+      <hr />
+
+      <h3>Speakers</h3>
 
       <section>
-        <span for-each-speakers>
+        <div for-each-speakers>
           <a href="../../../{{ speakers.item-path }}">
-            <img
-              height="32"
-              width="32"
-              alt="{{ speakers.displayName }}"
-              src="../../../{{ speakers.item-path }}/avatar.jpg"
-            />
+            <aside>
+              <img
+                height="64"
+                width="64"
+                alt="{{ speakers.displayName }}"
+                src="../../../{{ speakers.item-path }}/avatar.jpg"
+              />
 
-            <h4>{{ speakers.displayName }}</h4>
+              <h3>{{ speakers.displayName }}</h3>
+            </aside>
           </a>
-
-          <div>{{ speakers.description }}</div>
-        </span>
+        </div>
       </section>
     </main>
   </body>

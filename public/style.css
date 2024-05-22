@@ -20,6 +20,7 @@ a {
 
 header p,
 header h1,
+header h2,
 header h3,
 header img {
   text-align: center;
@@ -45,21 +46,26 @@ aside {
 }
 
 /* Hoempage */
-#homepage .talk-speaker {
+body#homepage .talk-speaker {
   width: 48px;
 }
 
-#homepage .talk-speaker img {
+body#homepage .talk-speaker img {
   border-radius: 50%;
 }
 
-/* Speakers page  */
-#speaker header {
+/* Speaker page  */
+body#speaker header {
   text-align: center;
 }
 
-#speaker header img {
+body#speaker header img {
   border-radius: 50%;
   width: 100%;
   max-width: 200px;
+}
+
+/* Talk page  */
+body#talk header {
+  text-align: center;
 }
