@@ -30,6 +30,7 @@ To use a variable in a template, use `{{ myVariable }}`
 
 #### Built-in variables
 
+- `item-name`: the name of the folder containing the talk or the speaker.
 - `item-path`: the path to the talk or the speaker.
 
 #### Custom variables

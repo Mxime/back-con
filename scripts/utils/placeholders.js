@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const showdown = require("showdown");
 
-function getPlaceholders(itemPath) {
+function getPlaceholders(itemPath, itemName) {
   // TODO: Remove relative path
   const configuration = require(`../../${itemPath}/index.json`);
   const converter = new showdown.Converter();
@@ -18,7 +18,7 @@ function getPlaceholders(itemPath) {
       return { ...acc, [path.parse(fileName).name]: html };
     }, configuration);
 
-  return { ...placeholders, "item-path": itemPath };
+  return { ...placeholders, "item-path": itemPath, "item-name": itemName };
 }
 
 function replaceWithPlaceholders(content, placeholders) {

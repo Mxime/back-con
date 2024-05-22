@@ -27,7 +27,10 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
   } = require("./placeholders.js");
 
   const everyItems = itemNames.reduce((acc, itemName) => {
-    const placeholders = getPlaceholders(`public/${itemType}/${itemName}`);
+    const placeholders = getPlaceholders(
+      `public/${itemType}/${itemName}`,
+      itemName
+    );
     if (onlyFeatured && !placeholders.featured) return acc;
 
     // if there's another foreach with itemType.something

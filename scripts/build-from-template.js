@@ -9,7 +9,7 @@ const { buildEach } = require("./utils/replace-items.js");
 const templatePath = process.argv[2];
 const directoryPath = process.argv[3];
 
-const items = fs
+const itemNames = fs
   .readdirSync(directoryPath, {
     recursive: false,
     withFileTypes: true,
@@ -17,8 +17,8 @@ const items = fs
   .filter((dirent) => dirent.isDirectory())
   .map(({ name }) => name);
 
-items.forEach((item) => {
-  const itemPath = `${directoryPath}/${item}`;
+itemNames.forEach((itemName) => {
+  const itemPath = `${directoryPath}/${itemName}`;
 
   // Copy the template to the item folder
   const newFilePath = `${itemPath}/index.html`;
@@ -29,7 +29,7 @@ items.forEach((item) => {
   const content = fs.readFileSync(newFilePath, "utf8");
 
   // Replace every placeholders
-  const placeholders = getPlaceholders(itemPath);
+  const placeholders = getPlaceholders(itemPath, itemName);
   const replacedWithPlaceholders = replaceWithPlaceholders(
     content,
     placeholders

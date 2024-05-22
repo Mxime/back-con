@@ -3,6 +3,7 @@
   <head>
     <title>Back Market – Backcon</title>
     <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
   </head>
   <body>
     <!-- THIS FILE IS AUTO-GENERATED
@@ -14,7 +15,7 @@
 
     <section>
       <article for-each-talks>
-        <h3>{{ talks.title }}</h3>
+        <h3><a href="#{{ talks.item-name }}">{{ talks.title }}</a></h3>
 
         <div for-each-talks.speakers>
           <a href="../{{ speakers.item-path }}">
