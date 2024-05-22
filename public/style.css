@@ -97,3 +97,9 @@ body#speaker header img {
 body#talk header {
   text-align: center;
 }
+
+iframe {
+  width: 100%;
+  height: 700px;
+  border-width: 0;
+}
