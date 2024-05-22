@@ -3,53 +3,81 @@
   <head>
     <title>Back Market – Backcon</title>
     <meta name="robots" content="noindex" />
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+    <link rel="stylesheet" href="./mvp.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
-    <h1>🎤 🥓 BackCon</h1>
+    <header>
+      <nav>
+        <h1>🎤 🥓 BackCon</h1>
+        <ul>
+          <li><a href="#talks">Talks</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li>
+            <a href="https://github.com/backmarket/backcon" target="_blank">
+              Github ↗
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    <h2>Talks</h2>
+      <h1>
+        The Backcon is a 1-day internal conference<br />open for all the BOT
+        members
+      </h1>
+      <p>
+        This will happen in <mark>Bordeaux 🍷</mark> on
+        <mark>Tuesday, June, 18th</mark>.
+      </p>
+    </header>
 
-    <section>
-      <article for-each-talks>
-        <h3><a href="#{{ talks.item-name }}">{{ talks.title }}</a></h3>
+    <main>
+      <section id="talks">
+        <h2>Talks</h2>
+        <article for-each-talks>
+          <h3>
+            <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
+            <sup>{{ talks.category }}</sup>
+          </h3>
 
-        <div for-each-talks.speakers>
-          <a href="../{{ speakers.item-path }}">
-            <img
-              height="32"
-              width="32"
-              alt="{{ speakers.displayName }}"
-              src="../{{ speakers.item-path }}/avatar.jpg"
-            />
-          </a>
-        </div>
+          <div for-each-talks.speakers>
+            <a href="../{{ speakers.item-path }}">
+              <img
+                height="32"
+                width="32"
+                alt="{{ speakers.displayName }}"
+                src="../{{ speakers.item-path }}/avatar.jpg"
+              />
+            </a>
+          </div>
 
-        <div>
-          <span>{{ talks.time }}</span>
-          <span>{{ talks.location }}</span>
-        </div>
+          <div>
+            <span>{{ talks.time }}</span>
 
-        <p>{{ talks.description }}</p>
+            <span>{{ talks.location }}</span>
+          </div>
 
-        <a href="../{{ talks.item-path }}">Link to the talk</a>
-      </article>
-    </section>
+          <p>{{ talks.description }}</p>
 
-    <h2>Speakers</h2>
+          <a href="../{{ talks.item-path }}">Link to the talk</a>
+        </article>
+      </section>
 
-    <section>
-      <span for-each-speakers>
-        <img
-          height="32"
-          width="32"
-          alt="{{ speakers.displayName }}"
-          src="../{{ speakers.item-path }}/avatar.jpg"
-        />
-      </span>
-    </section>
+      <section id="speakers">
+        <h2>Speakers</h2>
+
+        <span for-each-speakers>
+          <img
+            height="32"
+            width="32"
+            alt="{{ speakers.displayName }}"
+            src="../{{ speakers.item-path }}/avatar.jpg"
+          />
+        </span>
+      </section>
+    </main>
   </body>
 </html>

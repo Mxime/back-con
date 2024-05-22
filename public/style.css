@@ -1,0 +1,22 @@
+h1 {
+  font-family: IvarSoft, serif;
+}
+
+h2 {
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.375rem;
+}
+
+h3 > a {
+  color: var(--color-text);
+}
+
+a {
+  font-size: 0.875rem;
+}
+
+header p,
+header h1 {
+  text-align: center;
+}
