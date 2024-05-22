@@ -5,11 +5,13 @@ h1 {
 h2 {
   font-weight: 600;
   text-align: left;
-  font-size: 1.375rem;
+  font-size: 1.8rem;
+  font-family: IvarSoft, serif;
 }
 
 h3 > a {
   color: var(--color-text);
+  font-size: 1.25rem;
 }
 
 a {
@@ -25,4 +27,17 @@ nav > a {
   font-size: 2rem;
   text-decoration: none;
   font-family: IvarSoft, serif;
+}
+
+article {
+  margin: 20px 0;
+}
+
+section#speakers section > div > a {
+  text-decoration: none;
+}
+
+aside {
+  width: 20%;
+  text-align: center;
 }

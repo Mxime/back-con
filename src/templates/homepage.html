@@ -71,14 +71,22 @@
       <section id="speakers">
         <h2>Speakers</h2>
 
-        <span for-each-speakers>
-          <img
-            height="32"
-            width="32"
-            alt="{{ speakers.displayName }}"
-            src="../{{ speakers.item-path }}/avatar.jpg"
-          />
-        </span>
+        <section>
+          <div for-each-speakers>
+            <a href="../{{ speakers.item-path }}">
+              <aside>
+                <img
+                  height="64"
+                  width="64"
+                  alt="{{ speakers.displayName }}"
+                  src="../{{ speakers.item-path }}/avatar.jpg"
+                />
+
+                <h3>{{ speakers.displayName }}</h3>
+              </aside>
+            </a>
+          </div>
+        </section>
       </section>
     </main>
   </body>
