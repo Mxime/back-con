@@ -1,8 +1,10 @@
 {
   "title": "Code review: What a beautiful Lorem Ipsum",
   "category": "LIGHTNING",
-  "location": "Pins Secs",
+  "location": "",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["maxime-martin", "elodie-mermet"],
+  "speakers": ["maxime-martin"],
+  "calendarLink":"",
+  "feedbackLink":"",
   "featured": true
 }

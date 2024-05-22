@@ -1,8 +1,10 @@
 {
   "title": "TO UPDATE: chapter-life",
   "category": "ROUND_TABLE",
-  "location": "",
+  "location": "AGORA",
   "time": "2024-06-18T11:00:00Z",
-  "speakers": ["dimitri-baeli", "frederic-barguil"],
+  "speakers": ["giovanni-morelli"],
+  "calendarLink":"",
+  "feedbackLink":"",
   "featured": false
 }
