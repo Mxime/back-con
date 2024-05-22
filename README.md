@@ -86,3 +86,7 @@ You can add the `for-each-something` attribute in any html element:
 ```
 
 /!\ It's limited to speakers & talks in homepage + speakers on talks page for now.
+
+## Analytics
+
+Here is the dashboard made from the data collected on the website: https://app.eu.amplitude.com/analytics/backmarket/dashboard/e-5wzsfifg
