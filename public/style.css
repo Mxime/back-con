@@ -19,7 +19,9 @@ a {
 }
 
 header p,
-header h1 {
+header h1,
+header h3,
+header img {
   text-align: center;
 }
 
@@ -40,4 +42,15 @@ section#speakers section > div > a {
 aside {
   width: 20%;
   text-align: center;
+}
+
+/* Speakers page  */
+#speaker header {
+  text-align: center;
+}
+
+#speaker header img {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 200px;
 }
