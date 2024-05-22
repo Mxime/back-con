@@ -42,12 +42,12 @@
         <h2>Program</h2>
         <article for-each-talks>
           <h3>
+            {{ talks.formatted-time }}:
             <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
             <sup class="{{ talks.category }}">{{ talks.category }}</sup>
           </h3>
 
           <div>
-            <em>{{ talks.time }}</em>
             <span>{{ talks.location }}</span>
           </div>
 

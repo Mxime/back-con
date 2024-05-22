@@ -2,6 +2,15 @@ const fs = require("node:fs");
 const path = require("node:path");
 const showdown = require("showdown");
 
+function getFormattedTime(dateAsString) {
+  const date = new Date(dateAsString);
+
+  return Intl.DateTimeFormat("en-us", {
+    hour: "numeric",
+    minute: "numeric",
+  }).format(date);
+}
+
 function getPlaceholders(itemPath, itemName) {
   // TODO: Remove relative path
   const configuration = require(`../../${itemPath}/index.json`);
@@ -18,7 +27,18 @@ function getPlaceholders(itemPath, itemName) {
       return { ...acc, [path.parse(fileName).name]: html };
     }, configuration);
 
-  return { ...placeholders, "item-path": itemPath, "item-name": itemName };
+  let formattedTime = "";
+
+  try {
+    formattedTime = getFormattedTime(placeholders.time);
+  } catch {}
+
+  return {
+    ...placeholders,
+    "item-path": itemPath,
+    "item-name": itemName,
+    "formatted-time": formattedTime,
+  };
 }
 
 function replaceWithPlaceholders(content, placeholders) {

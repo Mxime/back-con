@@ -33,11 +33,11 @@ nav > a {
 }
 
 article {
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
-section#speakers section > div > a {
-  text-decoration: none;
+blockquote {
+  margin: 0;
 }
 
 aside {
@@ -72,6 +72,14 @@ body#homepage .talk-speaker {
 
 body#homepage .talk-speaker img {
   border-radius: 50%;
+}
+
+body#homepage #talks {
+  display: block;
+}
+
+section#speakers section > div > a {
+  text-decoration: none;
 }
 
 /* Speaker page  */

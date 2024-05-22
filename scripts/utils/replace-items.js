@@ -1,6 +1,13 @@
 const fs = require("node:fs");
 
-function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
+function buildEach(
+  content,
+  directive,
+  itemType,
+  itemNames,
+  onlyFeatured,
+  sortingFunction
+) {
   console.info(`build ${directive}`);
 
   // find for-each start
@@ -26,12 +33,14 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
     replaceWithPlaceholders,
   } = require("./placeholders.js");
 
-  const everyItems = itemNames.reduce((acc, itemName) => {
-    const placeholders = getPlaceholders(
-      `public/${itemType}/${itemName}`,
-      itemName
-    );
-    if (onlyFeatured && !placeholders.featured) return acc;
+  const items = itemNames.map((itemName) =>
+    getPlaceholders(`public/${itemType}/${itemName}`, itemName)
+  );
+
+  const sortedItems = sortingFunction ? items.sort(sortingFunction) : items;
+
+  const everyItems = sortedItems.reduce((acc, item) => {
+    if (onlyFeatured && !item.featured) return acc;
 
     // if there's another foreach with itemType.something
     // we should recursively build it
@@ -46,12 +55,12 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
           forEachContent,
           `for-each-${itemType}.${subItemType}`,
           subItemType,
-          placeholders[subItemType]
+          item[subItemType]
         )
       : forEachContent;
 
-    const prefixedPlaceholders = Object.keys(placeholders).reduce(
-      (acc, key) => ({ ...acc, [`${itemType}.${key}`]: placeholders[key] }),
+    const prefixedPlaceholders = Object.keys(item).reduce(
+      (acc, key) => ({ ...acc, [`${itemType}.${key}`]: item[key] }),
       {}
     );
 
@@ -60,13 +69,15 @@ function buildEach(content, directive, itemType, itemNames, onlyFeatured) {
       prefixedPlaceholders
     );
 
-    return acc + "\n" + replacedItems.replace(directive, `id="${itemName}"`);
+    return (
+      acc + "\n" + replacedItems.replace(directive, `id="${item["item-name"]}"`)
+    );
   }, "");
 
   return content.replace(forEachContent, everyItems);
 }
 
-function buildItems(content, itemType, featured) {
+function buildItems(content, itemType, featured, sortingFunction) {
   if (!content.includes(`for-each-${itemType}`)) return;
 
   const itemNames = fs
@@ -82,7 +93,8 @@ function buildItems(content, itemType, featured) {
     `for-each-${itemType}`,
     itemType,
     itemNames,
-    featured
+    featured,
+    sortingFunction
   );
 }
 

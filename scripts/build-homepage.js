@@ -11,7 +11,17 @@ const { buildItems } = require("./utils/replace-items.js");
 
 const homepage = fs.readFileSync(newFilePath, "utf8");
 
-const homePageWithTalks = buildItems(homepage, "talks", onlyFeatured);
+function sortByDate(a, b) {
+  return new Date(a.time) - new Date(b.time);
+}
+
+const homePageWithTalks = buildItems(
+  homepage,
+  "talks",
+  onlyFeatured,
+  sortByDate
+);
+
 const builtContent = buildItems(homePageWithTalks, "speakers");
 
 console.info(`᧐ Building "${newFilePath}"`);
