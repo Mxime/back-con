@@ -79,6 +79,7 @@ body#homepage #talks {
 }
 
 body#homepage #talks article > header {
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
