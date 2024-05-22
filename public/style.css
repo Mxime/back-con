@@ -45,7 +45,27 @@ aside {
   text-align: center;
 }
 
-/* Hoempage */
+sup.LIGHTNING {
+  background-color: rgb(227, 247, 126);
+  color: rgb(14, 16, 22);
+}
+
+sup.CONFERENCE {
+  background-color: rgb(188, 134, 254);
+  color: rgb(42, 15, 57);
+}
+
+sup.ROUND_TABLE {
+  background-color: rgb(217, 228, 252);
+  color: rgb(74, 94, 130);
+}
+
+sup.WORKSHOP {
+  background-color: rgb(251, 224, 177);
+  color: rgb(120, 90, 17);
+}
+
+/* Homepage */
 body#homepage .talk-speaker {
   width: 48px;
 }
