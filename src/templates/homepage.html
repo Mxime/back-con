@@ -41,11 +41,21 @@
       <section id="talks">
         <h2>Program</h2>
         <article for-each-talks>
-          <h3>
-            {{ talks.formatted-time }}:
-            <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
-            <sup class="{{ talks.category }}">{{ talks.category }}</sup>
-          </h3>
+          <header>
+            <h3>
+              {{ talks.formatted-time }}:
+              <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
+              <sup class="{{ talks.category }}">{{ talks.category }}</sup>
+            </h3>
+
+            <a
+              href="#"
+              class="add-to-favorite"
+              data-talk-name="{{ talks.item-name }}"
+            >
+              <i></i>
+            </a>
+          </header>
 
           <div>
             <span>{{ talks.location }}</span>
@@ -89,5 +99,7 @@
         </section>
       </section>
     </main>
+
+    <script src="./favorite.js"></script>
   </body>
 </html>

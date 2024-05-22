@@ -78,6 +78,34 @@ body#homepage #talks {
   display: block;
 }
 
+body#homepage #talks article > header {
+  display: flex;
+  justify-content: space-between;
+}
+
+body#homepage #talks article > header h3 {
+  text-align: left;
+}
+
+body#homepage #talks article > header a.add-to-favorite {
+  cursor: pointer;
+}
+
+body#homepage #talks article > header a.add-to-favorite i,
+body#homepage #talks article > header a.add-to-favorite b {
+  font-style: normal;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  body#homepage #talks article > header a.add-to-favorite i span,
+  body#homepage #talks article > header a.add-to-favorite b span {
+    display: none;
+  }
+}
+
 section#speakers section > div > a {
   text-decoration: none;
 }

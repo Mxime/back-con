@@ -31,6 +31,8 @@
       <h1>{{ title }}</h1>
       <h2>{{ formatted-time }}</h2>
       <h3>{{ location }}</h3>
+
+      <a href="#" class="add-to-favorite" data-talk-name="{{ item-name }}"></a>
     </header>
 
     <main>
@@ -66,5 +68,7 @@
         <!-- <iframe src="{{ feedbackLink }}"></iframe> -->
       </section>
     </main>
+
+    <script src="../../favorite.js"></script>
   </body>
 </html>
