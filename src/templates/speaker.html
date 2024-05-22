@@ -3,16 +3,28 @@
   <head>
     <title>{{ displayName }} – {{ department }}</title>
     <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="../../mvp.css" />
+    <link rel="stylesheet" href="../../style.css" />
   </head>
   <body>
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
 
-    <h1>{{ displayName }}</h1>
-    <h2>{{ title }}</h2>
-    <img height="100" width="100" alt="{{ displayName }}" src="./avatar.jpg" />
+    <header>
+      <h1>{{ displayName }}</h1>
+      <h2>{{ title }}</h2>
+    </header>
 
-    <p>{{ description }}</p>
+    <main>
+      <img
+        height="100"
+        width="100"
+        alt="{{ displayName }}"
+        src="./avatar.jpg"
+      />
+
+      <p>{{ description }}</p>
+    </main>
   </body>
 </html>

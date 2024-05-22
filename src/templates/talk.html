@@ -3,33 +3,39 @@
   <head>
     <title>{{ title }}</title>
     <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="../../mvp.css" />
+    <link rel="stylesheet" href="../../style.css" />
   </head>
   <body>
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
 
-    <h1>{{ title }}</h1>
-    <h2>{{ time }}</h2>
-    <h3>{{ location }}</h3>
+    <header>
+      <h1>{{ title }}</h1>
+      <h2>{{ time }}</h2>
+      <h3>{{ location }}</h3>
+    </header>
 
-    <p>{{ description }}</p>
+    <main>
+      <p>{{ description }}</p>
 
-    <section>
-      <span for-each-speakers>
-        <a href="../../../{{ speakers.item-path }}">
-          <img
-            height="32"
-            width="32"
-            alt="{{ speakers.displayName }}"
-            src="../../../{{ speakers.item-path }}/avatar.jpg"
-          />
+      <section>
+        <span for-each-speakers>
+          <a href="../../../{{ speakers.item-path }}">
+            <img
+              height="32"
+              width="32"
+              alt="{{ speakers.displayName }}"
+              src="../../../{{ speakers.item-path }}/avatar.jpg"
+            />
 
-          <h4>{{ speakers.displayName }}</h4>
-        </a>
+            <h4>{{ speakers.displayName }}</h4>
+          </a>
 
-        <div>{{ speakers.description }}</div>
-      </span>
-    </section>
+          <div>{{ speakers.description }}</div>
+        </span>
+      </section>
+    </main>
   </body>
 </html>
