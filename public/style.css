@@ -45,6 +45,10 @@ aside {
   text-align: center;
 }
 
+a.add-to-favorite {
+  cursor: pointer;
+}
+
 sup.LIGHTNING {
   background-color: rgb(227, 247, 126);
   color: rgb(14, 16, 22);
@@ -86,10 +90,6 @@ body#homepage #talks article > header {
 
 body#homepage #talks article > header h3 {
   text-align: left;
-}
-
-body#homepage #talks article > header a.add-to-favorite {
-  cursor: pointer;
 }
 
 body#homepage #talks article > header a.add-to-favorite i,
