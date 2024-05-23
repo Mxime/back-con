@@ -3,7 +3,8 @@ on:
   push:
     branches:    
       - main
-
+    paths:
+      - public/**
 jobs:
   create_pr:
     runs-on: ubuntu-latest
