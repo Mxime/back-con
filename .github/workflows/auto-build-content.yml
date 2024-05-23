@@ -20,8 +20,11 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Create new branch
+        id: create-branch
         run: |
-          git checkout -b "build-content-$(date +%s)"
+          export BRANCH_NAME="build-content-$(date +%s)" 
+          echo BRANCH_NAME=$BRANCH_NAME >> $GITHUB_OUTPUT
+          git checkout -b $BRANCH_NAME
 
       - name: Run script
         run: npm install
@@ -41,6 +44,9 @@ jobs:
 
       - name: Create pull request
         uses: devops-infra/action-pull-request@v0.5.5
+          
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: Automatic - Build new content
+          source_branch: ${{ steps.create-branch.outputs.BRANCH_NAME }}
+          target_branch: master
