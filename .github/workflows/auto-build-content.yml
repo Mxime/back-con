@@ -24,6 +24,9 @@ jobs:
           git checkout -b "build-content-$(date +%s)"
 
       - name: Run script
+        run: npm install
+
+      - name: Run script
         run: npm run build
     
       - name: Make commit
