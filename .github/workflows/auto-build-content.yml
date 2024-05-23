@@ -21,7 +21,7 @@ jobs:
 
       - name: Create new branch
         run: |
-          git checkout "build-content-$(date +%s)"
+          git checkout -b "build-content-$(date +%s)"
 
       - name: Run script
         run: npm run build
