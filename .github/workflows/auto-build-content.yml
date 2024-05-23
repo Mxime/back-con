@@ -1,0 +1,43 @@
+name: Build new content
+on:
+  push:
+    branches:    
+      - main
+
+jobs:
+  create_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Create new branch
+        run: |
+          git checkout "build-content-$(date +%s)"
+
+      - name: Run script
+        run: npm run build
+    
+      - name: Make commit
+        run: |
+          git commit -am "Commit content -$(date +%s)"
+
+      - name: Push new branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD
+
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@v0.5.5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          title: Automatic - Build new content
