@@ -8,6 +8,7 @@ function getFormattedTime(dateAsString) {
   return Intl.DateTimeFormat("en-us", {
     hour: "numeric",
     minute: "numeric",
+    timeZone: "Europe/Paris",
   }).format(date);
 }
 
