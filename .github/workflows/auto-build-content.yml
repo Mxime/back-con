@@ -49,4 +49,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: Automatic - Build new content
           source_branch: ${{ steps.create-branch.outputs.BRANCH_NAME }}
-          target_branch: master
+          target_branch: main
+          reviewer: "JessicaAudas"
