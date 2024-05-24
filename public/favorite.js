@@ -66,4 +66,10 @@ function removeFromFavorite(talkName, button) {
       else removeFromFavorite(talkName, addToFavoriteButton);
     });
   });
+
+  const favoritedTalksCount = Array.from(talkElements).filter((element) =>
+    element.classList.contains("favorited")
+  ).length;
+
+  document.body.classList.add(`talks-favorited-${favoritedTalksCount}`);
 })();

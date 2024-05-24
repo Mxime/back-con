@@ -123,6 +123,14 @@ section#speakers section > div > a {
   display: none;
 }
 
+#my-favorites:not(.talks-favorited-0) .empty {
+  display: none;
+}
+
+#my-favorites .empty h3 {
+  text-align: center;
+}
+
 /* Speaker page  */
 body#speaker header {
   text-align: center;
