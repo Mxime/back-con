@@ -76,6 +76,13 @@ sup.WORKSHOP {
   color: rgb(120, 90, 17);
 }
 
+#theme-switch {
+  border-radius: 50%;
+  padding: 2px;
+  width: 32px;
+  height: 32px;
+}
+
 /*  Talks component */
 .talks > header {
   padding: 0;
