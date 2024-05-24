@@ -77,7 +77,7 @@ function buildEach(
   return content.replace(forEachContent, everyItems);
 }
 
-function buildItems(content, itemType, featured, sortingFunction) {
+function buildItems(content, { itemType, onlyFeatured, sortingFunction }) {
   if (!content.includes(`for-each-${itemType}`)) return;
 
   const itemNames = fs
@@ -93,9 +93,23 @@ function buildItems(content, itemType, featured, sortingFunction) {
     `for-each-${itemType}`,
     itemType,
     itemNames,
-    featured,
+    onlyFeatured,
     sortingFunction
   );
 }
 
-module.exports = { buildItems, buildEach };
+function buildEachInTemplate(templatePath, newFilePath, itemsOptions) {
+  // Copy the template file
+  fs.cpSync(templatePath, newFilePath);
+
+  const page = fs.readFileSync(newFilePath, "utf8");
+
+  const builtContent = itemsOptions.reduce(buildItems, page);
+
+  console.info(`᧐ Building "${newFilePath}"`);
+
+  // Rewrite the html
+  fs.writeFileSync(newFilePath, builtContent);
+}
+
+module.exports = { buildEachInTemplate, buildEach };
