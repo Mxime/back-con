@@ -47,12 +47,15 @@ function removeFromFavorite(talkName, button) {
 (function init() {
   console.info("init favorite script");
 
-  const addToFavoriteButtons = document.querySelectorAll(".add-to-favorite");
+  const talkElements = document.querySelectorAll(".talks");
 
-  addToFavoriteButtons.forEach((addToFavoriteButton) => {
+  talkElements.forEach((talkElement) => {
+    const addToFavoriteButton = talkElement.querySelector(".add-to-favorite");
+
     const talkName = addToFavoriteButton.dataset.talkName;
 
     if (isFavorited(talkName)) {
+      talkElement.classList.add("favorited");
       setFavoritedHtml(addToFavoriteButton);
     } else {
       setAddToFavoriteHtml(addToFavoriteButton);

@@ -8,3 +8,9 @@ buildEachInTemplate("src/templates/homepage.html", "public/index.html", [
   { itemType: "talks", onlyFeatured: true, sortingFunction: sortByDate },
   { itemType: "speakers" },
 ]);
+
+buildEachInTemplate(
+  "src/templates/my-favorites.html",
+  "public/my-favorites.html",
+  [{ itemType: "talks", sortingFunction: sortByDate }]
+);

@@ -26,6 +26,12 @@ header img {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
 nav > a {
   font-size: 2rem;
   text-decoration: none;
@@ -47,6 +53,7 @@ aside {
 
 a.add-to-favorite {
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 sup.LIGHTNING {
@@ -69,31 +76,19 @@ sup.WORKSHOP {
   color: rgb(120, 90, 17);
 }
 
-/* Homepage */
-body#homepage .talk-speaker {
-  width: 48px;
-}
-
-body#homepage .talk-speaker img {
-  border-radius: 50%;
-}
-
-body#homepage #talks {
-  display: block;
-}
-
-body#homepage #talks article > header {
+/*  Talks component */
+.talks > header {
   padding: 0;
   display: flex;
   justify-content: space-between;
 }
 
-body#homepage #talks article > header h3 {
+.talks > header h3 {
   text-align: left;
 }
 
-body#homepage #talks article > header a.add-to-favorite i,
-body#homepage #talks article > header a.add-to-favorite b {
+.talks > header a.add-to-favorite i,
+.talks > header a.add-to-favorite b {
   font-style: normal;
   border-radius: 20px;
   padding: 6px 12px;
@@ -101,14 +96,31 @@ body#homepage #talks article > header a.add-to-favorite b {
 }
 
 @media (max-width: 768px) {
-  body#homepage #talks article > header a.add-to-favorite i span,
-  body#homepage #talks article > header a.add-to-favorite b span {
+  .talks > header a.add-to-favorite i span,
+  .talks > header a.add-to-favorite b span {
     display: none;
   }
 }
 
+.talk-speaker {
+  width: 48px;
+}
+
+.talk-speaker img {
+  border-radius: 50%;
+}
+
+#talks {
+  display: block;
+}
+
 section#speakers section > div > a {
   text-decoration: none;
+}
+
+/* My favorites */
+#my-favorites .talks:not(.favorited) {
+  display: none;
 }
 
 /* Speaker page  */

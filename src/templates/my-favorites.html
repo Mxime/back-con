@@ -11,16 +11,16 @@
 
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   </head>
-  <body id="homepage">
+  <body id="my-favorites">
     <!-- THIS FILE IS AUTO-GENERATED
          Please do not update it yourself :)
     -->
     <header>
       <nav>
-        <a href="#">🎤 🥓 BackCon</a>
+        <a href="index.html">🎤 🥓 BackCon</a>
         <ul>
-          <li><a href="#talks">Talks</a></li>
-          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="./index.html#talks">Talks</a></li>
+          <li><a href="./index.html#speakers">Speakers</a></li>
           <li><a href="./my-favorites.html">★ My favorites</a></li>
           <li>
             <a href="https://github.com/backmarket/backcon" target="_blank">
@@ -30,19 +30,11 @@
         </ul>
       </nav>
 
-      <h1>
-        The Backcon is a 1-day internal conference<br />open for all the BOT
-        members
-      </h1>
-      <p>
-        This will happen in <mark>Bordeaux 🍷</mark> on
-        <mark>Tuesday, June, 18th</mark>.
-      </p>
+      <h1>My favorites ⭐️</h1>
     </header>
 
     <main>
       <section id="talks">
-        <h2>Program</h2>
         <article for-each-talks>
           <header>
             <h3>
@@ -76,28 +68,6 @@
           <a href="../{{ talks.item-path }}">More...</a>
         </article>
       </section>
-
-      <section id="speakers">
-        <h2>Speakers</h2>
-
-        <section>
-          <div for-each-speakers>
-            <a href="../{{ speakers.item-path }}">
-              <aside>
-                <img
-                  height="64"
-                  width="64"
-                  alt="{{ speakers.displayName }}"
-                  src="../{{ speakers.item-path }}/avatar.jpg"
-                />
-
-                <h3>{{ speakers.displayName }}</h3>
-              </aside>
-            </a>
-          </div>
-        </section>
-      </section>
-    </main>
 
     <script src="./favorite.js"></script>
   </body>

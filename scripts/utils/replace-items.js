@@ -70,7 +70,12 @@ function buildEach(
     );
 
     return (
-      acc + "\n" + replacedItems.replace(directive, `id="${item["item-name"]}"`)
+      acc +
+      "\n" +
+      replacedItems.replace(
+        directive,
+        `class="${itemType} ${item["item-name"]}"`
+      )
     );
   }, "");
 
