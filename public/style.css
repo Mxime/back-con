@@ -32,6 +32,10 @@ header img {
   }
 }
 
+body > header {
+  text-align: center;
+}
+
 nav > a {
   font-size: 2rem;
   text-decoration: none;
@@ -138,20 +142,10 @@ section#speakers section > div > a {
   text-align: center;
 }
 
-/* Speaker page  */
-body#speaker header {
-  text-align: center;
-}
-
 body#speaker header img {
   border-radius: 50%;
   width: 100%;
   max-width: 200px;
-}
-
-/* Talk page  */
-body#talk header {
-  text-align: center;
 }
 
 body#talk article img {
