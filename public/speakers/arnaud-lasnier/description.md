@@ -1,1 +1,1 @@
-Description arnaud-lasnier to **update**
+I've been working at Back Market as a backend engineer for 2.5 years now, mostly working in Python with a bit of JavaScript. I've learnt a decent amount of programming languages but my favourite one is Go, by far! When I'm not in meetings or coding at the Paris office, you can probably find me playing table tennis in the basement!
