@@ -4,7 +4,7 @@ on:
     branches:    
       - main
     paths:
-      - public/**
+      - public/**/*.md
 jobs:
   create_pr:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
     
       - name: Make commit
         run: |
-          git commit -am "Commit content -$(date +%s)"
+          git commit -am "Commit content - $(date +%s)"
 
       - name: Push new branch
         env:
@@ -48,7 +48,7 @@ jobs:
           
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Automatic - Build new content
+          title: feat(auto) - Update content
           source_branch: ${{ steps.create-branch.outputs.BRANCH_NAME }}
           target_branch: main
           reviewer: "JessicaAudas"
