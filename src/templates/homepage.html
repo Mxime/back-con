@@ -31,11 +31,7 @@
         </ul>
       </nav>
 
-      <h1>
-        WIP - Content not up to date
-        Should not be shared yet 😉
-    
-      </h1>
+      <h1>WIP - Content not up to date Should not be shared yet 😉</h1>
       <p>
         This will happen in <mark>Bordeaux 🍷</mark> on
         <mark>Tuesday, June, 18th</mark>.
@@ -49,7 +45,7 @@
           <header>
             <h3>
               {{ talks.formatted-time }}:
-              <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
+              <a href="../{{ talks.item-path }}"> {{ talks.title }} </a>
               <sup class="{{ talks.category }}">{{ talks.category }}</sup>
             </h3>
 
@@ -74,8 +70,6 @@
           </div>
 
           <div>{{ talks.description }}</div>
-
-          <a href="../{{ talks.item-path }}">More...</a>
         </article>
       </section>
 
