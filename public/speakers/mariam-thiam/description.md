@@ -1,1 +1,2 @@
-Description mariam-thiam to **update**
+Data Engineer at Back Market, where I’ve been passionately advocating for Airflow and building robust Data Platforms for nearly 2 years. 
+With 6 years of experience scaling pipelines with Airflow across various companies, I've fine-tuned my skills in streamlining data processes and ensuring smooth workflow management.
