@@ -41,6 +41,7 @@ jobs:
         run: |
           if [ "$pr_exists" = "true" ]; then
             branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
+            git fetch
             git checkout $branch_name
           else
             branch_name="build-content-$(date +%s)"
