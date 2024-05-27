@@ -41,10 +41,10 @@ jobs:
         run: |
           if [ "$pr_exists" = "true" ]; then
             branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
-            git fetch
-            git status
+            git pull
             git checkout $(gh pr view $pr_number --json headRefName --jq '.headRefName')
             git status
+            git rebase origin/main
           else
             branch_name="build-content-$(date +%s)"
             git checkout -b $branch_name
@@ -65,7 +65,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin HEAD
+          git push -f origin HEAD
 
       - name: Create pull request
         if: env.pr_exists == 'false'
