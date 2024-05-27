@@ -21,12 +21,30 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Create new branch
-        id: create-branch
+      - name: Check for existing PR
+        id: check_pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          export BRANCH_NAME="build-content-$(date +%s)" 
-          echo BRANCH_NAME=$BRANCH_NAME >> $GITHUB_OUTPUT
-          git checkout -b $BRANCH_NAME
+          pr_number=$(gh pr list --state open --search "feat(auto) - Update content" --json number --jq '.[0].number')
+          if [ -z "$pr_number" ]; then
+            echo "pr_exists=false" >> $GITHUB_ENV
+          else
+            echo "pr_exists=true" >> $GITHUB_ENV
+            echo "pr_number=$pr_number" >> $GITHUB_ENV
+          fi
+
+      - name: Create or update branch
+        id: create-or-update-branch
+        run: |
+          if [ "$pr_exists" = "true" ]; then
+            branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
+            git checkout $branch_name
+          else
+            branch_name="build-content-$(date +%s)"
+            git checkout -b $branch_name
+          fi
+          echo branch_name=$branch_name >> $GITHUB_OUTPUT
 
       - name: Run script
         run: npm install
@@ -38,7 +56,7 @@ jobs:
         run: |
           git commit -am "Commit content - $(date +%s)"
 
-      - name: Push new branch
+      - name: Push branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
