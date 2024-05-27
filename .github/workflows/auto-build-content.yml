@@ -43,8 +43,7 @@ jobs:
             branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
             git pull
             git checkout $(gh pr view $pr_number --json headRefName --jq '.headRefName')
-            git status
-            git rebase origin/main
+            git reset --hard HEAD~1
           else
             branch_name="build-content-$(date +%s)"
             git checkout -b $branch_name
