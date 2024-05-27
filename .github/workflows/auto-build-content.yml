@@ -63,6 +63,7 @@ jobs:
           git push origin HEAD
 
       - name: Create pull request
+        if: env.pr_exists == 'false'
         uses: devops-infra/action-pull-request@v0.5.5
           
         with:
