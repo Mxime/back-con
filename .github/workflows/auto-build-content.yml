@@ -36,6 +36,8 @@ jobs:
 
       - name: Create or update branch
         id: create-or-update-branch
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "$pr_exists" = "true" ]; then
             branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
@@ -44,7 +46,7 @@ jobs:
             branch_name="build-content-$(date +%s)"
             git checkout -b $branch_name
           fi
-          echo branch_name=$branch_name >> $GITHUB_OUTPUT
+          echo BRANCH_NAME=$branch_name >> $GITHUB_OUTPUT
 
       - name: Run script
         run: npm install
