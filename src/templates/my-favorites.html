@@ -17,7 +17,20 @@
     -->
     <header>
       <nav>
-        <a href="index.html">🎤 🥓 BackCon</a>
+        <a href="index.html">
+          <img
+            class="logo-light-theme"
+            width="200"
+            src="./logo-light-theme.svg"
+            alt=" 🎤 🥓 BackCon"
+          />
+          <img
+            class="logo-dark-theme"
+            width="200"
+            src="./logo-dark-theme.svg"
+            alt=" 🎤 🥓 BackCon"
+          />
+        </a>
         <ul>
           <li><a href="./index.html#talks">Talks</a></li>
           <li><a href="./index.html#speakers">Speakers</a></li>
@@ -44,7 +57,7 @@
           <header>
             <h3>
               {{ talks.formatted-time }}:
-              <a href="#{{ talks.item-name }}"> {{ talks.title }} </a>
+              <a href="../{{ talks.item-path }}"> {{ talks.title }} </a>
               <sup class="{{ talks.category }}">{{ talks.category }}</sup>
             </h3>
 
@@ -69,8 +82,6 @@
           </div>
 
           <div>{{ talks.description }}</div>
-
-          <a href="../{{ talks.item-path }}">More...</a>
         </article>
       </section>
 

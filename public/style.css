@@ -87,6 +87,20 @@ sup.WORKSHOP {
   height: 32px;
 }
 
+html:not(.dark-theme) .logo-light-theme {
+  display: none;
+}
+html:not(.dark-theme) .logo-dark-theme {
+  display: block;
+}
+
+html.dark-theme .logo-light-theme {
+  display: block;
+}
+html.dark-theme .logo-dark-theme {
+  display: none;
+}
+
 /*  Talks component */
 .talks > header {
   padding: 0;
@@ -142,7 +156,7 @@ section#speakers section > div > a {
   text-align: center;
 }
 
-body#speaker header img {
+body#speaker header > img {
   border-radius: 50%;
   width: 100%;
   max-width: 200px;
