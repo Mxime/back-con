@@ -37,7 +37,7 @@ jobs:
       - name: Create or update branch
         id: create-or-update-branch
         env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "$pr_exists" = "true" ]; then
             branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
