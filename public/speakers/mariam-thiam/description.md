@@ -1,2 +1,2 @@
-Data Engineer at Back Market, where I’ve been passionately advocating for Airflow and building robust Data Platforms for nearly 2 years. 
-With 6 years of experience scaling pipelines with Airflow across various companies, I've fine-tuned my skills in streamlining data processes and ensuring smooth workflow management.
+I joined Back Market 19 months ago, where I've been passionately advocating for Airflow and building robust Data Platforms.
+With 6 years of experience scaling pipelines with Airflow at various companies like PayFit and Shine, I've fine-tuned my skills in streamlining data processes and ensuring smooth workflow management.
