@@ -20,7 +20,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
+          
       - name: Check for existing PR
         id: check_pr
         env:
@@ -34,22 +34,19 @@ jobs:
             echo "pr_number=$pr_number" >> $GITHUB_ENV
           fi
 
-      - name: Create or update branch
-        id: create-or-update-branch
+      - name: Close existing PR
+        if: env.pr_exists == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ "$pr_exists" = "true" ]; then
-            branch_name=$(gh pr view $pr_number --json headRefName --jq '.headRefName')
-            git pull
-            git checkout $(gh pr view $pr_number --json headRefName --jq '.headRefName')
-            git reset --hard HEAD~1
-            git rebase origin/main
-          else
-            branch_name="build-content-$(date +%s)"
-            git checkout -b $branch_name
-          fi
-          echo BRANCH_NAME=$branch_name >> $GITHUB_OUTPUT
+          gh pr close $pr_number --delete-branch
+
+      - name: Create new branch
+        id: create_new_branch
+        run: |
+          branch_name="build-content-$(date +%s)"
+          git checkout -b $branch_name
+          echo "BRANCH_NAME=$branch_name" >> $GITHUB_ENV
 
       - name: Run script
         run: npm install
