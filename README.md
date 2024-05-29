@@ -32,6 +32,7 @@ To use a variable in a template, use `{{ myVariable }}`
 
 - `item-name`: the name of the folder containing the talk or the speaker.
 - `item-path`: the path to the talk or the speaker.
+- `formatted-time`: the date of the talk formatted `hour: numeric, minute: numeric`: `10:00 AM` for example.
 
 #### Custom variables
 
@@ -53,7 +54,7 @@ For example, you can use `{{ name }}` and `{{ description }}` on the `speaker.ht
 - `public/speakers/jean-jacques/index.json` containing `"name": "Example"`
 - `public/speakers/jean-jacques/description` containing your markdown
 
-after running `npm run build`, you'll `public/speakers/jean-jacques/index.html` will update with your variables
+after running `npm run build`, `public/speakers/jean-jacques/index.html` will be updated with your variables
 
 ### Loop over talks or speakers
 
